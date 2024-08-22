@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int addNumbers(int num1, int num2) {
+    return num1 + num2;
+}
+
+int main() {
+    int number1, number2, sum;
+    cout << "Enter the first number: ";
+    cin >> number1;
+    cout << "Enter the second number: ";
+    cin >> number2;
+    sum = addNumbers(number1, number2);
+    cout << "Sum: " << sum << endl;
+    return 0;
+}
