@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, n;
+    cout << "Enter number: ";
+    cin >> num;
+    cout << "Enter bit position to set (0-based): ";
+    cin >> n;
+
+    // Check if the bit is already set
+    if ((num & (1 << n)) != 0) {
+        cout << "The bit is already set." << endl;
+    } else {
+        // Set the Nth bit
+        num = num | (1 << n);
+        cout << "Bit set successfully." << endl;
+    }
+
+    cout << "Resulting number: " << num << endl;
+    return 0;
+}
