@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+// Function to add two integers
+int add(int a, int b) {
+    return a + b;
+}
+
+// Function to add three integers
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+// Function to add two doubles
+double add(double a, double b) {
+    return a + b;
+}
+
+int main() {
+    // Adding two integers
+    cout << "Sum of 10 and 20: " << add(10, 20) << endl;
+
+    // Adding three integers
+    cout << "Sum of 10, 20, and 30: " << add(10, 20, 30) << endl;
+
+    // Adding two doubles
+    cout << "Sum of 10.5 and 20.5: " << add(10.5, 20.5) << endl;
+
+    return 0;
+}
