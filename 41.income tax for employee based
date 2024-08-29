@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Declare variables to store employee information
+    string employeeName;
+    double annualIncome;
+    double taxAmount = 0.0;
+
+    // Prompt the user to enter employee information
+    cout << "Enter employee name: ";
+    cin >> employeeName;
+    cout << "Enter annual income: ";
+    cin >> annualIncome;
+
+    // Calculate taxes based on income brackets
+    if (annualIncome <= 250000) {
+        // No tax for income up to Rs. 2,50,000
+        taxAmount = 0.0;
+    } else if (annualIncome <= 500000) {
+        // 5% tax for income between Rs. 2,50,001 and Rs. 5,00,000
+        taxAmount = (annualIncome - 250000) * 0.05;
+    } else if (annualIncome <= 1000000) {
+        // 20% tax for income between Rs. 5,00,001 and Rs. 10,00,000
+        taxAmount = 12500 + (annualIncome - 500000) * 0.20;
+    } else {
+        // 30% tax for income above Rs. 10,00,000
+        taxAmount = 112500 + (annualIncome - 1000000) * 0.30;
+    }
+
+    // Display the calculated tax amount
+    cout << "Employee Name: " << employeeName << endl;
+    cout << "Annual Income: Rs. " << annualIncome << endl;
+    cout << "Income Tax: Rs. " << taxAmount << endl;
+
+    return 0;
+}
+
