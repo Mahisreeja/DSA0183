@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee {
+public:
+    string Emp_name;
+    int Emp_id;
+    string Address;
+    string Mail_id;
+    string Mobile_no;
+};
+
+class Programmer : public Employee {
+public:
+    double BasicPay;
+    double calculateGrossSalary() {
+        return BasicPay + 0.97 * BasicPay + 0.1 * BasicPay;
+    }
+};
+
+class AssistantProfessor : public Employee {
+public:
+    double BasicPay;
+    double calculateGrossSalary() {
+        return BasicPay + 0.97 * BasicPay + 0.1 * BasicPay;
+    }
+};
+
+class AssociateProfessor : public Employee {
+public:
+    double BasicPay;
+    double calculateGrossSalary() {
+        return BasicPay + 0.97 * BasicPay + 0.1 * BasicPay;
+    }
+};
+
+class Professor : public Employee {
+public:
+    double BasicPay;
+    double calculateGrossSalary() {
+        return BasicPay + 0.97 * BasicPay + 0.1 * BasicPay;
+    }
+};
+
+int main() {
+    // Example usage
+    Programmer programmer;
+    programmer.Emp_name = "John Doe";
+    programmer.Emp_id = 1001;
+    programmer.BasicPay = 50000;
+
+    cout << "Employee Name: " << programmer.Emp_name << endl;
+    cout << "Employee ID: " << programmer.Emp_id << endl;
+    cout << "Gross Salary: $" << programmer.calculateGrossSalary() << endl;
+
+    return 0;
+}
