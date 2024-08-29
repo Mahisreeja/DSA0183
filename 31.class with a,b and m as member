@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class Largest {
+private:
+    int a, b, m;
+
+public:
+    void setdata(int a_val, int b_val, int m_val) {
+        a = a_val;
+        b = b_val;
+        m = m_val;
+    }
+
+    friend void find_Max(Largest obj);
+};
+
+void find_Max(Largest obj) {
+    int max_val = max(obj.a, max(obj.b, obj.m));
+    cout << "The largest value is: " << max_val << endl;
+}
+
+int main() {
+    Largest myObj;
+    myObj.setdata(10, 20, 15);
+    find_Max(myObj);
+
+    return 0;
+}
