@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    float real;
+    float imag;
+
+public:
+    // Constructor to initialize real and imag
+    Complex() : real(0), imag(0) {}
+    Complex(float r, float i) : real(r), imag(i) {}
+
+    // Overload the + operator
+    Complex operator + (const Complex& obj) {
+        Complex temp;
+        temp.real = real + obj.real;
+        temp.imag = imag + obj.imag;
+        return temp;
+    }
+
+    // Function to display the complex number
+    void display() {
+        if (imag < 0)
+            cout << "Output Complex number: " << real << imag << "i" << endl;
+        else
+            cout << "Output Complex number: " << real << "+" << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1(1.0, 2.0);
+    Complex c2(3.0, 4.0);
+
+    // Calls the overloaded + operator
+    Complex result = c1 + c2;
+    result.display();
+
+    return 0;
+}
