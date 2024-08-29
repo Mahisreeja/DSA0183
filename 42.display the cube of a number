@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class CubeCalculator {
+private:
+    int n;
+
+public:
+    CubeCalculator() {
+        n = 0;
+    }
+
+    void getInput() {
+        cout << "Enter the number: ";
+        cin >> n;
+    }
+
+    void displayCubes() {
+        for (int i = 1; i <= n; ++i) {
+            cout << "The cube of " << i << " is " << (i * i * i) << endl;
+        }
+    }
+
+    ~CubeCalculator() {
+        cout << "Destructor called. Resources cleaned up." << endl;
+    }
+};
+
+int main() {
+    CubeCalculator calculator;
+    calculator.getInput();
+    calculator.displayCubes();
+    return 0;
+}
