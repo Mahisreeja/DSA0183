@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class SeriesSum {
+private:
+    int sum;
+
+public:
+    // Constructor for single parameter
+    SeriesSum(int n) {
+        sum = 0;
+        for (int i = 1; i <= n; ++i) {
+            sum += i;
+        }
+        cout << "Sum of series (1 to " << n << "): " << sum << endl;
+    }
+
+    // Constructor for two parameters
+    SeriesSum(int start, int end) {
+        sum = 0;
+        for (int i = start; i <= end; ++i) {
+            sum += i;
+        }
+        cout << "Sum of series (" << start << " to " << end << "): " << sum << endl;
+    }
+};
+
+int main() {
+    int choice;
+    cout << "Enter 1 for single parameter or 2 for two parameters: ";
+    cin >> choice;
+
+    if (choice == 1) {
+        int n;
+        cout << "Enter the number to find the sum of series: ";
+        cin >> n;
+        SeriesSum singleParamSum(n);
+    } else if (choice == 2) {
+        int start, end;
+        cout << "Enter the start and end numbers to find the sum of series: ";
+        cin >> start >> end;
+        SeriesSum twoParamSum(start, end);
+    } else {
+        cout << "Invalid choice!" << endl;
+    }
+
+    return 0;
+}
