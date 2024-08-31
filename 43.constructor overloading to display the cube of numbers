@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+class Cube {
+    int n;
+
+public:
+    // Default constructor
+    Cube() {
+        n = 0;
+    }
+
+    // Parameterized constructor
+    Cube(int num) {
+        n = num;
+    }
+
+    void displayCubes() {
+        for (int i = 1; i <= n; ++i) {
+            cout << "Number is: " << i << " and the cube of " << i << " is: " << (i * i * i) << endl;
+        }
+    }
+};
+
+int main() {
+    int num;
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    // Using parameterized constructor
+    Cube cubeObj(num);
+    cubeObj.displayCubes();
+
+    return 0;
+}
